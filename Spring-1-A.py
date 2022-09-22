@@ -274,6 +274,7 @@ class compression:
                                         F=0
                                         T=0
                                         T4=0
+                                        T5=0
                                         
                                         while block_R<R_N:
                                                      R_C=R[block_R:block_R+1]
@@ -292,6 +293,7 @@ class compression:
                                                      elif R_C=="1" and block_R==R_N-1 and block_R!=19: 
                                                         
                                                          T=1
+                                                         T5=1
                                                          
                                                      block_R=block_R+1
                                                      
@@ -336,7 +338,7 @@ class compression:
                                             Number_Save=Number_Save+Str_Ilin_Number_Save+"1"
                                             T2=0                                             
                                            
-                                        elif Number<100000000000000000000 and Number>21 and R_N!=20 and T2==1 and T4==0:
+                                        elif Number<100000000000000000000 and Number>21 and R_N!=20 and T2==1 and T5==1:
                                             Str_Ilin_Number_Save=str(Number)
                                               
                                             
