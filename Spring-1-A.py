@@ -264,10 +264,25 @@ class compression:
                                                     
                                     while block<long:
                                         ILIN=size_data3[block:block+blocks]
-                                        Number=int(ILIN,2)             
-                                        if Number<100000000000000000000 or Number>21:
-                                            Str_Ilin_Number_Save=str(Number)
+                                        Number=int(ILIN,2)
+                                        R=str(Number+2)
+                                        block_R=0
+                                        R_N=len(R)
+                                        F=0
+                                        while block_R<R_N:
+                                                     R_C=R[block_R:block_R+1]
+                                                     if R_C=="1":
+                                                         F=1
+                                                     block_R=block_R+1
+                                                     
+                                                     
+                                        if Number<100000000000000000000 and Number>23 and F!=1:
+                                            Str_Ilin_Number_Save=str(Number+2)
                                             Number_Save=Number_Save+Str_Ilin_Number_Save
+                                    
+                                        elif Number<100000000000000000000 and Number>22 and F==1:
+                                            Str_Ilin_Number_Save=str(Number+1)
+                                            Number_Save=Number_Save+Str_Ilin_Number_Save                                                                                      
                                         else:
                                                 Number_Save=Number_Save+ILIN
                                         block=block+blocks
