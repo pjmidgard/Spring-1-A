@@ -275,12 +275,18 @@ class compression:
                                         T=0
                                         T4=0
                                         T5=0
+                                        T6=0
                                         
                                         while block_R<R_N:
                                                      R_C=R[block_R:block_R+1]
                                                      if R_C=="0":
                                                          F=1
                                                          
+                                                     elif R_C=="1" and block_R==1:
+                                                         T6=1
+                                                      
+                                                     elif R_C=="0" and block_R==1:
+                                                         T6=1
                                                      elif R_C=="1":
                                                          F=1
                                                      if R_C=="0" and block_R==R_N-1 and block_R!=19:
@@ -297,7 +303,7 @@ class compression:
                                                          
                                                      block_R=block_R+1
                                                      
-                                                 
+                                        #print(T6)        
                                         if Number<100000000000000000000 and Number>21 and F==0 and R_N==20:
                                             Str_Ilin_Number_Save=str(Number)
                                             Number_Save=Number_Save+Str_Ilin_Number_Save
@@ -308,11 +314,11 @@ class compression:
                                            
                                             
                                     
-                                        elif Number<100000000000000000000 and Number>21 and F==1 and R_N==20:
+                                        elif Number<100000000000000000000 and Number>210 and F==1 and R_N==20:
                                             Str_Ilin_Number_Save=str(Number) 
                                             Number_Save=Number_Save+Str_Ilin_Number_Save
                                             T2=0
-                                        elif Number<100000000000000000000 and Number>21 and R_N!=20 and T2==0:
+                                        elif Number<100000000000000000000 and Number>210 and R_N!=20 and T2==0:
                                             Str_Ilin_Number_Save=str(Number)
                                               
                                             
@@ -321,7 +327,7 @@ class compression:
                                             #print(Number)
                                             T2=1
                                             
-                                        elif Number<100000000000000000000 and Number>21 and R_N!=20 and T2==1 and T==0:
+                                        elif Number<100000000000000000000 and Number>210 and R_N!=20 and T2==1 and T==0:
                                             Str_Ilin_Number_Save=str(Number)
                                               
                                             
@@ -330,7 +336,7 @@ class compression:
                                             T2=0  
                                           
                                            
-                                        elif Number<100000000000000000000 and Number>21 and R_N!=20 and T2==1 and T4==1:
+                                        elif Number<100000000000000000000 and Number>210 and R_N!=20 and T2==1 and T4==1:
                                             Str_Ilin_Number_Save=str(Number)
                                               
                                             
@@ -338,7 +344,7 @@ class compression:
                                             Number_Save=Number_Save+Str_Ilin_Number_Save+"1"
                                             T2=0                                             
                                            
-                                        elif Number<100000000000000000000 and Number>21 and R_N!=20 and T2==1 and T5==1:
+                                        elif Number<100000000000000000000 and Number>210 and R_N!=20 and T2==1 and T5==1:
                                             Str_Ilin_Number_Save=str(Number)
                                               
                                             
@@ -347,6 +353,7 @@ class compression:
                                             T2=0                                                                                                                              
                                         else:
                                                 Number_Save=Number_Save+ILIN
+                                                
                                                 T2=0
                                                
                                                 
