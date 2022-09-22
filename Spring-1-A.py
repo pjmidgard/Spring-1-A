@@ -280,7 +280,7 @@ class compression:
                                                      block_R=block_R+1
                                                      
                                                      
-                                        if Number<100000000000000000000 and Number>21 and F!=1:
+                                        if Number<100000000000000000000 and Number>21 and F==0:
                                             Str_Ilin_Number_Save=str(Number)
                                             Number_Save=Number_Save+Str_Ilin_Number_Save
                                     
