@@ -260,38 +260,93 @@ class compression:
                                                     
                                     long=len(size_data3)
                                     Times6=0
-                                    T=0
+                                    T2=0
+                                    T3=1
+                                    
                                     #print(long)
                                                     
                                     while block<long:
                                         ILIN=size_data3[block:block+blocks]
                                         Number=int(ILIN,2)
-                                        R=str(Number+2)
+                                        R=str(Number)
                                         block_R=0
                                         R_N=len(R)
                                         F=0
+                                        T=0
+                                        T4=0
+                                        
                                         while block_R<R_N:
                                                      R_C=R[block_R:block_R+1]
-                                                     if R_C=="1":
+                                                     if R_C=="0":
                                                          F=1
-                                                     elif R_C=="1" and block_R==1:
-                                                         F=2
-                                                     elif R_C=="1" and block_R==R_N:
-                                                         F=3
+                                                         
+                                                     elif R_C=="1":
+                                                         F=1
+                                                     if R_C=="0" and block_R==R_N-1 and block_R!=19:
+                                                        
+                                                         T=1
+                                                         T4=1
+                                                    
+                                                     
+                                                    
+                                                     elif R_C=="1" and block_R==R_N-1 and block_R!=19: 
+                                                        
+                                                         T=1
+                                                         
                                                      block_R=block_R+1
                                                      
-                                                     
-                                        if Number<100000000000000000000 and Number>21 and F==0:
-                                            Str_Ilin_Number_Save=str(Number+2)
+                                                 
+                                        if Number<100000000000000000000 and Number>21 and F==0 and R_N==20:
+                                            Str_Ilin_Number_Save=str(Number)
                                             Number_Save=Number_Save+Str_Ilin_Number_Save
+                                            T2=0
+                                            
+                                            
+                                            
+                                           
                                             
                                     
-                                        elif Number<100000000000000000000 and Number>21 and F==1:
-                                            Str_Ilin_Number_Save=str(Number+1)
+                                        elif Number<100000000000000000000 and Number>21 and F==1 and R_N==20:
+                                            Str_Ilin_Number_Save=str(Number) 
                                             Number_Save=Number_Save+Str_Ilin_Number_Save
-                                                                                                                          
+                                            T2=0
+                                        elif Number<100000000000000000000 and Number>21 and R_N!=20 and T2==0:
+                                            Str_Ilin_Number_Save=str(Number)
+                                              
+                                            
+                                           
+                                            Number_Save=Number_Save+Str_Ilin_Number_Save
+                                            #print(Number)
+                                            T2=1
+                                            
+                                        elif Number<100000000000000000000 and Number>21 and R_N!=20 and T2==1 and T==0:
+                                            Str_Ilin_Number_Save=str(Number)
+                                              
+                                            
+                                           
+                                            Number_Save=Number_Save+Str_Ilin_Number_Save+"0"
+                                            T2=0  
+                                          
+                                           
+                                        elif Number<100000000000000000000 and Number>21 and R_N!=20 and T2==1 and T4==1:
+                                            Str_Ilin_Number_Save=str(Number)
+                                              
+                                            
+                                           
+                                            Number_Save=Number_Save+Str_Ilin_Number_Save+"1"
+                                            T2=0                                             
+                                           
+                                        elif Number<100000000000000000000 and Number>21 and R_N!=20 and T2==1 and T4==0:
+                                            Str_Ilin_Number_Save=str(Number)
+                                              
+                                            
+                                           
+                                            Number_Save=Number_Save+Str_Ilin_Number_Save+"0"
+                                            T2=0                                                                                                                              
                                         else:
                                                 Number_Save=Number_Save+ILIN
+                                                T2=0
+                                               
                                                 
                                         block=block+blocks
                                         #print(block)
