@@ -267,6 +267,7 @@ class compression:
                                                     
                                     while block<long:
                                         ILIN=size_data3[block:block+blocks]
+                                        #print(ILIN)
                                         Number=int(ILIN,2)
                                         R=str(Number)
                                         block_R=0
@@ -304,7 +305,7 @@ class compression:
                                                      block_R=block_R+1
                                                      
                                         #print(T6)        
-                                        if Number<100000000000000000000 and Number>21 and F==0 and R_N==20:
+                                        if Number<100000000000000000000 and Number>210 and F==0 and R_N==20:
                                             Str_Ilin_Number_Save=str(Number)
                                             Number_Save=Number_Save+Str_Ilin_Number_Save
                                             T2=0
@@ -353,6 +354,9 @@ class compression:
                                             T2=0                                                                                                                              
                                         else:
                                                 Number_Save=Number_Save+ILIN
+                                                #print(ILIN)
+                                                
+
                                                 
                                                 T2=0
                                                
