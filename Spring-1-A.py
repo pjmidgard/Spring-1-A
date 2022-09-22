@@ -265,7 +265,7 @@ class compression:
                                     while block<long:
                                         ILIN=size_data3[block:block+blocks]
                                         Number=int(ILIN,2)
-                                        R=str(Number+2)
+                                        R=str(Number)
                                         block_R=0
                                         R_N=len(R)
                                         F=0
@@ -273,15 +273,19 @@ class compression:
                                                      R_C=R[block_R:block_R+1]
                                                      if R_C=="1":
                                                          F=1
+                                                     elif R_C=="1" and block_R==20:
+                                                         F=2
+                                                     elif R_C=="1" and block_R==R_N:
+                                                         F=3
                                                      block_R=block_R+1
                                                      
                                                      
-                                        if Number<100000000000000000000 and Number>23 and F!=1:
-                                            Str_Ilin_Number_Save=str(Number+2)
+                                        if Number<100000000000000000000 and Number>21 and F!=1:
+                                            Str_Ilin_Number_Save=str(Number)
                                             Number_Save=Number_Save+Str_Ilin_Number_Save
                                     
-                                        elif Number<100000000000000000000 and Number>22 and F==1:
-                                            Str_Ilin_Number_Save=str(Number+1)
+                                        elif Number<100000000000000000000 and Number>21 and F==1:
+                                            Str_Ilin_Number_Save=str(Number)
                                             Number_Save=Number_Save+Str_Ilin_Number_Save                                                                                      
                                         else:
                                                 Number_Save=Number_Save+ILIN
