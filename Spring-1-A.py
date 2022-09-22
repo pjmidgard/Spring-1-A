@@ -260,6 +260,7 @@ class compression:
                                                     
                                     long=len(size_data3)
                                     Times6=0
+                                    T=0
                                     #print(long)
                                                     
                                     while block<long:
@@ -273,22 +274,25 @@ class compression:
                                                      R_C=R[block_R:block_R+1]
                                                      if R_C=="1":
                                                          F=1
-                                                     elif R_C=="1" and block_R==20:
+                                                     elif R_C=="1" and block_R==1:
                                                          F=2
                                                      elif R_C=="1" and block_R==R_N:
                                                          F=3
                                                      block_R=block_R+1
                                                      
                                                      
-                                        if Number<100000000000000000000 and Number>21 and F==0:
+                                        if Number<100000000000000000000 and Number>21 and F==0 and T==0:
                                             Str_Ilin_Number_Save=str(Number)
                                             Number_Save=Number_Save+Str_Ilin_Number_Save
+                                            T=1
                                     
-                                        elif Number<100000000000000000000 and Number>21 and F==1:
+                                        elif Number<100000000000000000000 and Number>21 and F==1 and T==0:
                                             Str_Ilin_Number_Save=str(Number)
-                                            Number_Save=Number_Save+Str_Ilin_Number_Save                                                                                      
+                                            Number_Save=Number_Save+Str_Ilin_Number_Save
+                                            T=1                                                                               
                                         else:
                                                 Number_Save=Number_Save+ILIN
+                                                T==0
                                         block=block+blocks
                                         #print(block)
                                            
