@@ -357,7 +357,7 @@ class compression:
                                             T2=1
                                             
                                         elif Number<100000000000000000000 and Number>21 and R_N!=20 and T2==1 and T==0 and T7==1:
-                                            Str_Ilin_Number_Save=str(Number+3)
+                                            Str_Ilin_Number_Save=str(Number)
                                               
                                             
                                            
@@ -366,7 +366,7 @@ class compression:
                                           
                                            
                                         elif Number<100000000000000000000 and Number>21 and R_N!=20 and T2==1 and T4==1 and T7==1:
-                                            Str_Ilin_Number_Save=str(Number+3)
+                                            Str_Ilin_Number_Save=str(Number)
                                               
                                             
                                            
@@ -374,14 +374,14 @@ class compression:
                                             T2=0                                             
                                            
                                         elif Number<100000000000000000000 and Number>21 and R_N!=20 and T2==1 and T5==1 and T7==1: 
-                                            Str_Ilin_Number_Save=str(Number+3)
+                                            Str_Ilin_Number_Save=str(Number)
                                               
                                             
                                            
                                             Number_Save=Number_Save+Str_Ilin_Number_Save+"0"
                                             T2=0                                                                                                                              
                                         elif Number<100000000000000000000 and Number>21 and R_N!=20 and T2==0 and T7==1 and T==1:
-                                                Str_Ilin_Number_Save=str(Number+3)
+                                                Str_Ilin_Number_Save=str(Number)
                                                 Number_Save=Number_Save+Str_Ilin_Number_Save+"0"
                                                 #print(Number+3)
                                                 
