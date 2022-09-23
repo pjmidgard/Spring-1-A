@@ -342,7 +342,7 @@ class compression:
                                            
                                             
                                     
-                                        elif Number<100000000000000000000 and Number>210 and F==1 and R_N==20 and T7==1:
+                                        elif Number<100000000000000000000 and Number>21 and F==1 and R_N==20 and T7==1:
                                             Str_Ilin_Number_Save=str(Number) 
                                             Number_Save=Number_Save+Str_Ilin_Number_Save
                                             T2=0
