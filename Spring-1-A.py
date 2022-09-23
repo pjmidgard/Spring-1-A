@@ -287,7 +287,8 @@ class compression:
                                         block=block+blocks
                                         
                                     size_data12=Number_Save
-                                    if T==0:                                        size_data11=bin(int(size_data12))[2:]
+                                    if T==0:     
+                                        size_data11=bin(int(size_data12))[2:]
                                     if T==1:
                                         size_data11=""
                                     size_data11="1"+size_data11
