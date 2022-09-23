@@ -280,15 +280,7 @@ class compression:
                                         block=block+blocks
                                         
                                     size_data12=Number_Save
-                                    #ILIN
-                                
-
-                                    
-                                            
-                                    
-                                        
-                                        
-       
+        
                                     size_data11=bin(int(size_data12))[2:]
                                     size_data11="1"+size_data11
                                     
