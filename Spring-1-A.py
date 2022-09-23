@@ -100,7 +100,7 @@ class compression:
                         data1=data
                         size_after2=len(data)
                         #print(size_after2)
-                        if len(data)==0:
+                        if len(data)==0 or len(data)<=32:
                             x4=0.0
                             print(x4)
                             raise SystemExit
@@ -275,7 +275,9 @@ class compression:
                                             Str_Ilin_Number_Save=str(Number)
                                             long5=len(Str_Ilin_Number_Save)
                                             str1=str(long5)
+                                            
                                             Number_Save=Number_Save+str1+Str_Ilin_Number_Save
+                                           
 
                                         block=block+blocks
                                         
