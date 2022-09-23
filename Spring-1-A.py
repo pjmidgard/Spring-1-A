@@ -355,7 +355,7 @@ class compression:
                             print('Path is not exists!')
                             raise SystemExit
                     Portal=2
-                    namea="file.W"
+                    namea=""
                     namem=""
                     namema="?"
                     Deep=0
