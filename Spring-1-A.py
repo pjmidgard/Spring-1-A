@@ -334,7 +334,7 @@ class compression:
                                                      
                                         #print(T6)        
                                         if Number<100000000000000000000 and Number>21 and F==0 and R_N==20 and T7==1:
-                                            Str_Ilin_Number_Save=str(Number+3)
+                                            Str_Ilin_Number_Save=str(Number)
                                             Number_Save=Number_Save+Str_Ilin_Number_Save
                                             T2=0
                                             
@@ -344,11 +344,11 @@ class compression:
                                             
                                     
                                         elif Number<100000000000000000000 and Number>21 and F==1 and R_N==20 and T7==1:
-                                            Str_Ilin_Number_Save=str(Number+3) 
+                                            Str_Ilin_Number_Save=str(Number) 
                                             Number_Save=Number_Save+Str_Ilin_Number_Save
                                             T2=0
                                         elif Number<100000000000000000000 and Number>21 and R_N!=20 and T2==0 and T7==1 and T==0:
-                                            Str_Ilin_Number_Save=str(Number+3)
+                                            Str_Ilin_Number_Save=str(Number)
                                               
                                             
                                            
@@ -361,7 +361,7 @@ class compression:
                                               
                                             
                                            
-                                            Number_Save=Number_Save+Str_Ilin_Number_Save+"0"
+                                            Number_Save=Number_Save+Str_Ilin_Number_Save
                                             T2=0  
                                           
                                            
@@ -382,7 +382,7 @@ class compression:
                                             T2=0                                                                                                                              
                                         elif Number<100000000000000000000 and Number>21 and R_N!=20 and T2==0 and T7==1 and T==1:
                                                 Str_Ilin_Number_Save=str(Number+3)
-                                                Number_Save=Number_Save+Str_Ilin_Number_Save
+                                                Number_Save=Number_Save+Str_Ilin_Number_Save+"0"
                                                 #print(Number+3)
                                                 
                                                 
