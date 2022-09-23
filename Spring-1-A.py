@@ -268,23 +268,17 @@ class compression:
                                     
                                     while block<long:
                                         ILIN=size_data3[block:block+blocks]
-                                        #print(ILIN)
+                                       
                                         Number=int(ILIN,2)
-                                        
-                                                     
-                                        #print(T6)        
+                                           
                                         if Number<100000000:
                                             Str_Ilin_Number_Save=str(Number)
                                             long5=len(Str_Ilin_Number_Save)
                                             str1=str(long5)
-                                            #print(str1)
                                             Number_Save=Number_Save+Str_Ilin_Number_Save+str1
-                                          
-                              
-                                                
+
                                         block=block+blocks
-                                        #print(block)
-                                           
+                                        
                                     size_data12=Number_Save
                                     #ILIN
                                 
