@@ -273,7 +273,7 @@ class compression:
                                         
                                                      
                                         #print(T6)        
-                                        if Number<10**8:
+                                        if Number<100000000:
                                             Str_Ilin_Number_Save=str(Number)
                                             long5=len(Str_Ilin_Number_Save)
                                             str1=str(long5)
