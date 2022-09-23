@@ -252,6 +252,7 @@ class compression:
                                                     
                                                      
                                     block=0
+                                    Last_Block=0
 
                                     #b=format(predict,'04b')
                                     #predict=predict+1
@@ -381,6 +382,7 @@ class compression:
                                             T2=0                                                                                                                              
                                         else:
                                                 Number_Save=Number_Save+ILIN
+                                                Last_Block=len(ILIN)
                                                 #print(ILIN)
                                                 
 
@@ -419,7 +421,9 @@ class compression:
                                                                     
                                                                     
                                     size_data11=add_bits118+size_data11
-                                    
+                                    b=format(Last_Block,'08b') 
+                                 
+                                    size_data11=b+size_data11
                                     
                                     n = int(size_data11, 2)
                                 
