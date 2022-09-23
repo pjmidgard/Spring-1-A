@@ -275,7 +275,7 @@ class compression:
                                             Str_Ilin_Number_Save=str(Number)
                                             long5=len(Str_Ilin_Number_Save)
                                             str1=str(long5)
-                                            Number_Save=Number_Save+Str_Ilin_Number_Save+str1
+                                            Number_Save=str1+Number_Save+Str_Ilin_Number_Save
 
                                         block=block+blocks
                                         
