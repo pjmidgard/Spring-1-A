@@ -99,8 +99,13 @@ class compression:
                         #data=paq.compress(data)
                         data1=data
                         size_after2=len(data)
-                        #print(size_after2)
-                        if len(data)==0 or len(data)<=32:
+                        #print(size_after2)  
+                        
+                        T=0
+                        
+                        if len(data)<33:
+                            T=1
+                        if len(data)==0:
                             x4=0.0
                             print(x4)
                             raise SystemExit
@@ -261,8 +266,8 @@ class compression:
                                                     
                                     long=len(size_data3)
                                     Times6=0
-                                    T2=0
-                                    T3=1
+                                   
+                                    
                                     
                                     #print(long)
                                     
@@ -282,8 +287,9 @@ class compression:
                                         block=block+blocks
                                         
                                     size_data12=Number_Save
-        
-                                    size_data11=bin(int(size_data12))[2:]
+                                    if T==0:                                        size_data11=bin(int(size_data12))[2:]
+                                    if T==1:
+                                        size_data11=""
                                     size_data11="1"+size_data11
                                     
                                     
@@ -311,6 +317,8 @@ class compression:
                                     qqwslenf="%0"+qqwslenf+"x"
                              
                                     jl=binascii.unhexlify(qqwslenf % n)
+                                    if T==1:
+                                        jl=data1
 
                                     #import paq
                                     #jl= paq.compress(jl)
