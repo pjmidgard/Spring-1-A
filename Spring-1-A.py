@@ -252,7 +252,7 @@ class compression:
                                                     
                                                      
                                     block=0
-                                    Last_Block=0
+                                   
 
                                     #b=format(predict,'04b')
                                     #predict=predict+1
