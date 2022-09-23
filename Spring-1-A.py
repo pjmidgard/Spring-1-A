@@ -383,6 +383,7 @@ class compression:
                                         else:
                                                 Number_Save=Number_Save+ILIN
                                                 Last_Block=len(ILIN)
+                                                
                                                 #print(ILIN)
                                                 
 
@@ -421,9 +422,16 @@ class compression:
                                                                     
                                                                     
                                     size_data11=add_bits118+size_data11
-                                    b=format(Last_Block,'08b') 
+                                    if Last_Block!=66:
+                                                    T8=1 
+                                                    b1="0"
+                                                    
+                                    if Last_Block==66:
+                                                    T8=1 
+                                                    b1="1"
+                                    b=format(Last_Block,'07b') 
                                  
-                                    size_data11=b+size_data11
+                                    size_data11=b1+b+size_data11
                                     
                                     n = int(size_data11, 2)
                                 
