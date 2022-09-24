@@ -103,8 +103,6 @@ class compression:
                         
                         T=0
                         
-                        if len(data)<33:
-                            T=1
                         if len(data)==0:
                             x4=0.0
                             print(x4)
@@ -247,7 +245,7 @@ class compression:
                                     blocks=long_block
                                     size_compress=63
                                     #ILIN
-                                    blocks=32#3,4,5,6,7,8,9,10
+                                    blocks=13#3,4,5,6,7,8,9,10
                                     #6 2
                                     #16 5
                                     #10 32
@@ -275,14 +273,15 @@ class compression:
                                         ILIN=size_data3[block:block+blocks]
                                        
                                         Number=int(ILIN,2)
-                                           
-                                        if Number<100000000:
-                                            Str_Ilin_Number_Save=str(Number)
-                                            long5=len(Str_Ilin_Number_Save)
+                                        Str_Ilin_Number_Save=str(Number) 
+                                        long5=len(Str_Ilin_Number_Save)
+                                        if str(Number)[0:1]!="1" and str(Number)[0:1]!="2" and str(Number)[0:1]!="3" and str(Number)[0:1]!="4" and  long5==4:
+                                            str1=""
+                                        elif long5<=4:
                                             str1=str(long5)
-                                            
+                                 
                                             Number_Save=Number_Save+str1+Str_Ilin_Number_Save
-                                           
+                                      
 
                                         block=block+blocks
                                         
