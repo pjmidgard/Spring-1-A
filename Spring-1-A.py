@@ -45,16 +45,6 @@ class compression:
 
                     long=len(name)
                    
-
-                    
-
-                    
-                    
-                   
-                    
-                    Deep_long=240
-                    Deep_long_All=Deep_long*16
-                    block_size_long=16
                     Times_compression=1
                     
                     name_cut=len(".bin")
@@ -193,28 +183,10 @@ class compression:
                                 size_data3=size_data2
                                
                                 long_file=len(size_data3)
-                                size_data10=""
-                                size_data9=""
-                                size_data5=""
-                                fda5=""
-                                size_data4=""
-                                size_data6=""
-                                size_data7=""
-                                size_data12=""
-                                size_data19=""
+                              
                                 size_data10=size_data3
-                           
-                                
-                                long_block=16
                                
-                               
-                                
-                                
                                 times_of_times=0
-                           
-                                str_find=""
-                          
-                                
 
                                 cvf1=1
   
@@ -222,35 +194,20 @@ class compression:
                                     times_compression=0  
                                   
                                     long2=len(size_data3)
-                                    Deep=long2//28
-                                    times2=Deep
-                                    long_block=block_size_long
-                               
-                                    before_block=0
-                                    check_size_block=0
-                                    before_block_After_check=0
-
-
-                                    size_data_not_compress=size_data3
-                                    #print(size_data_not_compress)
-                                    
                                 
-                                    Times6=0
-                                    
                                     size_data10=size_data3
                                     
-                                    long_block=block_size_long
+                                    
                                     long2=len(size_data3)
-                                                    
-                                    blocks=long_block
-                                    size_compress=63
+                                    
                                     #ILIN
-                                    blocks=13#13 4 9999 2^13
-                                    Number_Save=""             
-                                    block=0     
+                                    blocks=13#13 9999 2^13 4
+                                    Number_Save=""            
+                                    block=0  
                                     long=len(size_data3)
                                     while block<long:
                                         ILIN=size_data3[block:block+blocks]
+                                       
                                         Number=int(ILIN,2)
                                         Str_Ilin_Number_Save=str(Number) 
                                         long5=len(Str_Ilin_Number_Save)
@@ -261,12 +218,10 @@ class compression:
                                             Number_Save=Number_Save+str1+Str_Ilin_Number_Save
                                         block=block+blocks
                                     size_data12=Number_Save
-                                    #ILIN
-    
+                                    size_data11=bin(int(size_data12))[2:]
+                                    
                                     size_data11="1"+size_data11
-                                    
-                                    
-                           
+                            
                                     lenf=len(size_data11)
                                         
                                     add_bits118=""
@@ -293,7 +248,8 @@ class compression:
                                     if T==1:
                                         jl=data1
 
-                                    
+                                    #import paq
+                                    #jl= paq.compress(jl)
                                     
                                     data2=jl
                                     
@@ -397,6 +353,15 @@ class compression:
                         data3 = binary_file.read()
 
                         data=data3
+
+                    
+                        import paq
+                        data= paq.decompress(data)
+                    
+
+                        
+                        
+                        
 
                         if len(data)==0:
                             x4=0.0
