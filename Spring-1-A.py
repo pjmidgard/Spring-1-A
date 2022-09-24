@@ -210,10 +210,10 @@ class compression:
                                         Str_Ilin_Number_Save=str(Number) 
                                         long5=len(Str_Ilin_Number_Save)
                                         str1=""
-                                        if str(Number)[0:1]!="1" and str(Number)[0:1]!="2" and str(Number)[0:1]!="3" and long5==4:
+                                        if str(Number)[0:1]!="1" and str(Number)[0:1]!="2" and str(Number)[0:1]!="3" and str(Number)[0:1]!="4" and long5==4:
                                             str1=""
                                             
-                                        elif long5<=3:
+                                        else:
                                             str1=str(long5)
                                         #print(str1+Str_Ilin_Number_Save)
                                         Number_Save=Number_Save+str1+Str_Ilin_Number_Save
