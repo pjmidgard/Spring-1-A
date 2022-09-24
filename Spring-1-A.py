@@ -219,7 +219,7 @@ class compression:
                                         if Minimum==Number and Number>9:
      
                                             Str_Ilin_Number_Save="0"
-                                            print(Number)
+                                            #print(Number)
                                   
                                         str1=str(long5)
                                         #print(str1+Str_Ilin_Number_Save)
