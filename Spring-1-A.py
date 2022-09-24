@@ -214,7 +214,7 @@ class compression:
                                             
                                         elif long5<=4:
                                             str1=str(long5)
-                                        
+                                        #print(str1+Str_Ilin_Number_Save)
                                         Number_Save=Number_Save+str1+Str_Ilin_Number_Save
                                         block=block+blocks
                                     size_data12=Number_Save
