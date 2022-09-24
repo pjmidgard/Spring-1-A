@@ -199,7 +199,7 @@ class compression:
                                     long2=len(size_data3)
                                     
                                     #ILIN
-                                    blocks=13#13 9999 2^13 4
+                                    blocks=29#13 9999 2^13 4
                                     Number_Save=""            
                                     block=0  
                                     long=len(size_data3)
@@ -209,12 +209,9 @@ class compression:
                                         Number=int(ILIN,2)
                                         Str_Ilin_Number_Save=str(Number) 
                                         long5=len(Str_Ilin_Number_Save)
-                                        str1=""
-                                        if str(Number)[0:1]!="1" and str(Number)[0:1]!="2" and str(Number)[0:1]!="3" and str(Number)[0:1]!="4" and long5==4:
-                                            str1=""
-                                            
-                                        else:
-                                            str1=str(long5)
+                                        long5=long5-1
+                                        
+                                        str1=str(long5)
                                         #print(str1+Str_Ilin_Number_Save)
                                         Number_Save=Number_Save+str1+Str_Ilin_Number_Save
                                         block=block+blocks
