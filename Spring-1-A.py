@@ -211,9 +211,11 @@ class compression:
                                         long5=len(Str_Ilin_Number_Save)
                                         if str(Number)[0:1]!="1" and str(Number)[0:1]!="2" and str(Number)[0:1]!="3" and str(Number)[0:1]!="4" and long5==4:
                                             str1=""
+                                            
                                         elif long5<=4:
                                             str1=str(long5)
-                                            Number_Save=Number_Save+str1+Str_Ilin_Number_Save
+                                        
+                                        Number_Save=Number_Save+str1+Str_Ilin_Number_Save
                                         block=block+blocks
                                     size_data12=Number_Save
                                     size_data11=bin(int(size_data12))[2:]
