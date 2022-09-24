@@ -87,11 +87,9 @@ class compression:
                         data = binary_file.read()
                         #import paq
                         #data=paq.compress(data)
-                        data1=data
+                
                         size_after2=len(data)
                         #print(size_after2)  
-                        
-                        T=0
                         
                         if len(data)==0:
                             x4=0.0
@@ -245,13 +243,9 @@ class compression:
                                     qqwslenf="%0"+qqwslenf+"x"
                              
                                     jl=binascii.unhexlify(qqwslenf % n)
-                                    if T==1:
-                                        jl=data1
-
+                                
                                     #import paq
                                     #jl= paq.compress(jl)
-                                    
-                                    data2=jl
                                     
                                     size_after=len(jl)
 
