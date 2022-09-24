@@ -245,51 +245,24 @@ class compression:
                                     blocks=long_block
                                     size_compress=63
                                     #ILIN
-                                    blocks=13#3,4,5,6,7,8,9,10
-                                    #6 2
-                                    #16 5
-                                    #10 32
-                                    #20 66
-                                    Number_Save=""
-                                                 
-                                                    
-                                                     
-                                    block=0
-                                   
-
-                                    #b=format(predict,'04b')
-                                    #predict=predict+1
-                                    #if predict==16:
-                                    #predict=0
-                                                    
+                                    blocks=13#13 4 9999 2^13
+                                    Number_Save=""             
+                                    block=0     
                                     long=len(size_data3)
-                                    Times6=0
-                                   
-                                    
-                                    
-                                    #print(long)
-                                    
                                     while block<long:
                                         ILIN=size_data3[block:block+blocks]
-                                       
                                         Number=int(ILIN,2)
                                         Str_Ilin_Number_Save=str(Number) 
                                         long5=len(Str_Ilin_Number_Save)
-                                        if str(Number)[0:1]!="1" and str(Number)[0:1]!="2" and str(Number)[0:1]!="3" and str(Number)[0:1]!="4" and  long5==4:
+                                        if str(Number)[0:1]!="1" and str(Number)[0:1]!="2" and str(Number)[0:1]!="3" and str(Number)[0:1]!="4" and long5==4:
                                             str1=""
                                         elif long5<=4:
                                             str1=str(long5)
-                                 
                                             Number_Save=Number_Save+str1+Str_Ilin_Number_Save
-                                      
-
                                         block=block+blocks
-                                        
                                     size_data12=Number_Save
-                                    if T==0:     
-                                        size_data11=bin(int(size_data12))[2:]
-                                    if T==1:
-                                        size_data11=""
+                                    #ILIN
+    
                                     size_data11="1"+size_data11
                                     
                                     
@@ -320,8 +293,7 @@ class compression:
                                     if T==1:
                                         jl=data1
 
-                                    #import paq
-                                    #jl= paq.compress(jl)
+                                    
                                     
                                     data2=jl
                                     
@@ -425,15 +397,6 @@ class compression:
                         data3 = binary_file.read()
 
                         data=data3
-
-                    
-                        import paq
-                        data= paq.decompress(data)
-                    
-
-                        
-                        
-                        
 
                         if len(data)==0:
                             x4=0.0
