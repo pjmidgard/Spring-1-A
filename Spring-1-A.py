@@ -213,14 +213,18 @@ class compression:
                                         long5=len(Str_Ilin_Number_Save)
                                         
                                         
-                                        if Minimum>Number and Number>9:
-                                            Minimum=Number
-                                            B=B+1
+                                        
                                   
-                                        elif Minimum==Number and B>=1:
+                                        Minimum=Minimum-1
+                                        if Minimum==9:
+                                            Minimum=999
+                                            
+                                        if Minimum==Number and Number>9:
+     
                                             Str_Ilin_Number_Save="0"
                                             #print(Number)
-                                            B=0
+                                           
+                                          
                                         if Minimum==10:
                                              Minimum=999
                                              B=0
