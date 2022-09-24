@@ -209,10 +209,11 @@ class compression:
                                         ILIN=size_data3[block:block+blocks]
                                        
                                         Number=int(ILIN,2)
-                                        if Number<=511 and Number>99+99:
+                                        if Number<=511 and Number>99+99 and Number!=100:
                                             N=Number-99
+                                        
+                                        elif Number<=99 and Number>9+9 and Number!=10:
                                             
-                                        elif Number<=99 and Number>9+9:
                                             N=Number-9
                                         Number=N
                                         Str_Ilin_Number_Save=str(Number) 
