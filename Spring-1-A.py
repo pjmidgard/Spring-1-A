@@ -218,7 +218,7 @@ class compression:
                                         Number_Save=Number_Save+str1+Str_Ilin_Number_Save
                                         block=block+blocks
                                     size_data12=Number_Save
-                                    size_data11=bin(int(size_data12))[2:]
+                                    size_data14=bin(int(size_data12))[2:]
                                     #print(size_data12)
                                     
                                     
@@ -231,7 +231,7 @@ class compression:
                                     b1=format(long8,'08b')
                                     
                                     
-                                    size_data11="1"+size_data11
+                                    size_data11="1"+size_data11+size_data14
                             
                                     lenf=len(size_data11)
                                         
