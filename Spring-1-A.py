@@ -260,8 +260,8 @@ class compression:
                              
                                     jl=binascii.unhexlify(qqwslenf % n)
                                 
-                                    #import paq
-                                    #jl= paq.compress(jl)
+                                    import paq
+                                    jl= paq.compress(jl)
                                     
                                     size_after=len(jl)
 
