@@ -199,7 +199,7 @@ class compression:
                                     long2=len(size_data3)
                                     
                                     #ILIN
-                                    blocks=9#9 numbers 29 bits
+                                    blocks=29#9 numbers 29 bits
                                     Number_Save=""            
                                     block=0  
                                     long=len(size_data3)
@@ -209,33 +209,25 @@ class compression:
                                         ILIN=size_data3[block:block+blocks]
                                        
                                         Number=int(ILIN,2)
-                                        #print(Number)
-                                                                              
-                                        
-                                        if Number<=511 and Number>99+99 and Number!=198:
-                                            Number=Number-99
-                                        
-                                        elif Number<=99 and Number>9+9 and Number!=18:
+                                       
+                                        T=0                               
+                                        while T!=10000000:  
+                                            if Number>99+99 and Number!=198:
+                                                Number=Number-99
                                             
-                                            Number=Number-9
+                                            elif Number<=99 and Number>9+9 and Number!=18:
+                                                
+                                                Number=Number-9
+                                            T=T+1
+                                         
                                         
                                       
                                       
                                         Str_Ilin_Number_Save=str(Number) 
                                         long5=len(Str_Ilin_Number_Save)
                             
-                                        Minimum=Minimum-1
-                                        if Minimum==9:
-                                            Minimum=511
-                                            
-                                        if Minimum==Number and Number>9:
-     
-                                            Str_Ilin_Number_Save="0"
-                                            #print(Number)
-                                        if str(Number)!="1" and str(Number)!="2" and str(Number)!="3" and long5==3:
-                                            str1=""
-                                        else:
-                                            str1=str(long5)
+                                    
+                                        str1=str(long5)
                                         #print(str1+Str_Ilin_Number_Save)
                                         Number_Save=Number_Save+str1+Str_Ilin_Number_Save
                                         block=block+blocks
