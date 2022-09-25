@@ -91,8 +91,9 @@ class compression:
                         size_after2=len(data)
                         #print(size_after2)  
                         
-                        if len(data)==0 or len(data)>2**40:
+                        if len(data)<871 or len(data)>2**40:
                             x4=0.0
+                            print("file too small or too big! ")
                             print(x4)
                             raise SystemExit
                             
