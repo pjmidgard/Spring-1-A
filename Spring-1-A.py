@@ -203,7 +203,7 @@ class compression:
                                     Number_Save=""            
                                     block=0  
                                     long=len(size_data3)
-                                    while block<240:
+                                    while block<29*24:
                                         ILIN=size_data3[block:block+blocks]
                                         Number=int(ILIN,2)
                                       
@@ -213,7 +213,7 @@ class compression:
                             
                                         
                                         str1=str(long5)
-                                        #print(str1+Str_Ilin_Number_Save)
+                                        print(str1+Str_Ilin_Number_Save)
                                         Number_Save=Number_Save+str1+Str_Ilin_Number_Save
                                         block=block+blocks
                                     size_data12=Number_Save
