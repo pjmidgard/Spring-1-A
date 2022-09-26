@@ -234,6 +234,10 @@ class compression:
                                                     N=str1+Str_Ilin_Number_Save
                                                     N=int(N)
                                                     N=format(N,'08b')#0011
+                                                if N[0:4]=="0000":
+                                                    print("File can't compress")
+                                                    raise SystemExit
+                                                    
                                                     #print(N)
                                                 else:
                                                     N=str1+Str_Ilin_Number_Save
@@ -252,8 +256,8 @@ class compression:
                                                 str1="0"
                                                 N=Str_Ilin_Number_Save
                                                 N=int(N)
-                                                N=format(N,'07b')#00
-                                                if N[0:3]=="000":
+                                                N=format(N,'08b')#00
+                                                if N[0:4]=="0000":
                                                     str1="0"
                                                     N=Str_Ilin_Number_Save
                                                     N=int(N)
