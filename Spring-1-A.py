@@ -205,7 +205,7 @@ class compression:
                                     long=len(size_data3)
                                     times_count=0
 
-                                    while times_count!=1000:
+                                    while times_count!=100000:
                                         long=len(size_data3)
                                         
                                 
