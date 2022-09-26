@@ -233,8 +233,8 @@ class compression:
                                             else:
                                                 N=str1+Str_Ilin_Number_Save
                                                 N=int(N)
-                                                N=format(N,'08b')#0
-                                            
+                                                N=format(N,'08b')#0 00
+                                                
                                             #print(len(N))
                                             #print(N)#000
                                         elif Number<30:
