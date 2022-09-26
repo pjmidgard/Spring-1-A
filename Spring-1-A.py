@@ -91,9 +91,8 @@ class compression:
                         size_after2=len(data)
                         #print(size_after2)  
                         
-                        if len(data)<871 or len(data)>2**40:
+                        if len(data)==0 or len(data)>2**40:
                             x4=0.0
-                            print("file too small or too big! ")
                             print(x4)
                             raise SystemExit
                             
@@ -199,39 +198,71 @@ class compression:
                                     
                                     long2=len(size_data3)
                                     
-                                    #ILIN
-                                    blocks=29#9 numbers 29 bits
+                                    #Logit 
+                                    blocks=8#9 numbers 29 bits
                                     Number_Save=""            
                                     block=0  
                                     long=len(size_data3)
-                                    while block<29*240:
+                                
+                                    while block<long:
                                         ILIN=size_data3[block:block+blocks]
+                                        
                                         Number=int(ILIN,2)
-                                      
-                                       
+
                                         Str_Ilin_Number_Save=str(Number) 
                                         long5=len(Str_Ilin_Number_Save)
-                            
-                                        
                                         str1=str(long5)
-                                        #print(str1+Str_Ilin_Number_Save)
-                                        Number_Save=Number_Save+str1+Str_Ilin_Number_Save
+                                    
+                                        c=0
+                                        if Number>99:
+                                            str1=""
+                                            Str_Ilin_Number_Save=ILIN
+                                            N=Str_Ilin_Number_Save
+                                            #print(N)#1 0 or 1 1
+                                        elif Number<100 and Number>29:
+                                            str1=""
+                                            N=str1+Str_Ilin_Number_Save
+                                            N=int(N)
+                                            N=format(N,'07b')#0
+                                            
+                                            if N[0:2]=="00":
+                                                N=str1+Str_Ilin_Number_Save
+                                                N=int(N)
+                                                N=format(N,'07b')#00
+                                                #print(N)
+                                            else:
+                                                N=str1+Str_Ilin_Number_Save
+                                                N=int(N)
+                                                N=format(N,'08b')#0
+                                            
+                                            #print(len(N))
+                                            #print(N)#000
+                                        elif Number<30:
+                                            str1="0"
+                                            N=Str_Ilin_Number_Save
+                                            N=int(N)
+                                            N=format(N,'08b')#000
+                                            #000
+                                            #print(N)
+                                        
+                                        
+                                        #print(N)
+                                        Number_Save=Number_Save+N
+                                        
                                         block=block+blocks
                                     size_data12=Number_Save
-                                    size_data14=bin(int(size_data12))[2:]
+                                    size_data11=size_data12
                                     #print(size_data12)
                                     
-                                    
-                                    
-                                    size_data11=size_data3[block:]
                                     b=bin(long2)[2:]
                                     #print(b)
                                     long8=len(b)
                                     #print(long8)
                                     b1=format(long8,'08b')
+                                    #print(len(size_data11))
                                     
                                     
-                                    size_data11="1"+size_data11+size_data14
+                                    size_data11="1"+b1+b+size_data11
                             
                                     lenf=len(size_data11)
                                         
@@ -260,8 +291,8 @@ class compression:
                              
                                     jl=binascii.unhexlify(qqwslenf % n)
                                 
-                                    import paq
-                                    jl= paq.compress(jl)
+                                    #import paq
+                                    #jl= paq.compress(jl)
                                     
                                     size_after=len(jl)
 
