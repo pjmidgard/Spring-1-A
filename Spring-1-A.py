@@ -223,27 +223,43 @@ class compression:
                                             str1=""
                                             N=str1+Str_Ilin_Number_Save
                                             N=int(N)
-                                            N=format(N,'07b')#0
+                                            N=format(N,'08b')#0
                                             
                                             if N[0:2]=="00":
                                                 N=str1+Str_Ilin_Number_Save
                                                 N=int(N)
-                                                N=format(N,'07b')#00
+                                                N=format(N,'07b')#0011
                                                 #print(N)
                                             else:
                                                 N=str1+Str_Ilin_Number_Save
                                                 N=int(N)
-                                                N=format(N,'08b')#0 00
-                                                
+                                                N=format(N,'08b')#0
+                                                if N[0:2]=="00":
+                                                    N=str1+Str_Ilin_Number_Save
+                                                    N=int(N)
+                                                    N=format(N,'07b')#0
+                                                    
                                             #print(len(N))
                                             #print(N)#000
                                         elif Number<30:
                                             str1="0"
                                             N=Str_Ilin_Number_Save
                                             N=int(N)
-                                            N=format(N,'08b')#000
-                                            #000
-                                            #print(N)
+                                            N=format(N,'07b')#00
+                                            if N[0:3]=="000":
+                                                str1="0"
+                                                N=Str_Ilin_Number_Save
+                                                N=int(N)
+                                                N=format(N,'08b')#00
+
+                                            else:
+                                                str1="0"
+                                                N=Str_Ilin_Number_Save
+                                                N=int(N)
+                                                N=format(N,'08b')#00
+                                                #if N[0:4]=="0000":
+                                                    #print(N)
+                                            
                                         
                                         
                                         #print(N)
