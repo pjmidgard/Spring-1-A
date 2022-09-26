@@ -236,7 +236,11 @@ class compression:
                                                     N=format(N,'08b')#0011
                                                 if N[0:4]=="0000":
                                                     print("File can't compress")
-                                                    raise SystemExit
+                                                    N1=format(N,'07b')#0
+                                                    if N1[0:3]=="000":
+                                                        print("File can't compress")
+                                                        raise SystemExit
+                                                   
                                                     
                                                     #print(N)
                                                 else:
