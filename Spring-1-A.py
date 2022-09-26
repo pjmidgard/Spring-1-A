@@ -235,11 +235,14 @@ class compression:
                                                     N=int(N)
                                                     N=format(N,'08b')#0011
                                                 if N[0:4]=="0000":
-                                                    print("File can't compress")
-                                                    N1=format(N,'07b')#0
-                                                    if N1[0:3]=="000":
-                                                        print("File can't compress")
-                                                        raise SystemExit
+                                                      print("File can't compress")
+                                                      N=str1+Str_Ilin_Number_Save
+                                                      N=int(N)
+                                                      N1=format(N,'07b')#0
+                                                      
+                                                      if N1[0:3]=="000":
+                                                            print("File can't compress")
+                                                            raise SystemExit
                                                    
                                                     
                                                     #print(N)
@@ -267,17 +270,7 @@ class compression:
                                                     N=int(N)
                                                     N=format(N,'07b')#00
 
-                                                else:
-                                                    str1="0"
-                                                    N=Str_Ilin_Number_Save
-                                                    N=int(N)
-                                                    N=format(N,'08b')#00
-                                                    if N[0:3]=="000":
-                                                        str1="0"
-                                                        N=Str_Ilin_Number_Save
-                                                        N=int(N)
-                                                        N=format(N,'07b')#00
-                                                    #if N[0:4]=="0000":
+                      #if N[0:4]=="0000":
                                                         #print(N)
                                                 
                                             
