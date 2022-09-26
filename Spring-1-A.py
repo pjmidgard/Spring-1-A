@@ -205,9 +205,9 @@ class compression:
                                     long=len(size_data3)
                                     times_count=0
 
-                                    while times_count!=100000:
+                                    while times_count!=1:
                                         long=len(size_data3)
-                                        
+                                        #print(long)
                                 
                                         while block<long:
                                             ILIN=size_data3[block:block+blocks]
@@ -282,6 +282,7 @@ class compression:
                                         size_data11=size_data12
                                         size_data3=size_data12
                                         times_count=times_count+1
+                                        #print(times_count)
                                     #print(size_data12)
                                     
                                     b=bin(long2)[2:]
@@ -307,7 +308,7 @@ class compression:
                                                     z=z+1
                                                                     
                                                                     
-                                    size_data11=b2+add_bits118+size_data11
+                                    size_data11=add_bits118+size_data11
                                     
                                     
                                     size_data11=size_data11
