@@ -292,7 +292,7 @@ class compression:
                                     #print(len(size_data11))
                                     
                                     
-                                    size_data11="1"+b1+b+size_data11
+                                    size_data11="1"+size_data11
                             
                                     lenf=len(size_data11)
                                         
