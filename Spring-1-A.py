@@ -257,6 +257,11 @@ class compression:
                                                 N=Str_Ilin_Number_Save
                                                 N=int(N)
                                                 N=format(N,'08b')#00
+                                                if N[0:3]=="000":
+                                                    str1="0"
+                                                    N=Str_Ilin_Number_Save
+                                                    N=int(N)
+                                                    N=format(N,'07b')#00
                                                 #if N[0:4]=="0000":
                                                     #print(N)
                                             
