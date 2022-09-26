@@ -228,7 +228,7 @@ class compression:
                                             if N[0:2]=="00":
                                                 N=str1+Str_Ilin_Number_Save
                                                 N=int(N)
-                                                N=format(N,'07b')#0011
+                                                N=format(N,'08b')#0011
                                                 #print(N)
                                             else:
                                                 N=str1+Str_Ilin_Number_Save
@@ -237,7 +237,9 @@ class compression:
                                                 if N[0:2]=="00":
                                                     N=str1+Str_Ilin_Number_Save
                                                     N=int(N)
-                                                    N=format(N,'07b')#0
+                                                    N=format(N,'08b')#0
+
+                                                    
                                                     
                                             #print(len(N))
                                             #print(N)#000
