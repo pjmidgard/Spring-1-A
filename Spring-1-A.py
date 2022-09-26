@@ -230,10 +230,7 @@ class compression:
                                                 N=int(N)
                                                 N=format(N,'08b')#0
                                                 
-                                                if N[0:2]=="00":
-                                                    N=str1+Str_Ilin_Number_Save
-                                                    N=int(N)
-                                                    N=format(N,'08b')#0011
+             
                                                 if N[0:4]=="0000":
                                                       print("File can't compress")
                                                       N=str1+Str_Ilin_Number_Save
