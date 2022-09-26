@@ -250,7 +250,7 @@ class compression:
                                                 str1="0"
                                                 N=Str_Ilin_Number_Save
                                                 N=int(N)
-                                                N=format(N,'08b')#00
+                                                N=format(N,'07b')#00
 
                                             else:
                                                 str1="0"
