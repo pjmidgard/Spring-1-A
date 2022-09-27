@@ -599,7 +599,7 @@ class compression:
                                         size_data11=size_data12
                                         times_count=times_count+1                                    
                                     size_data3=size_data11
-                                    print(len(size_data3))	
+                                    #print(len(size_data3))	
                                         
                                       
                                     n = int(size_data3, 2)
