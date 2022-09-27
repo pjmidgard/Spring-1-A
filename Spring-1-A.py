@@ -426,8 +426,8 @@ class compression:
                         data=data3
 
                     
-                        import paq
-                        data= paq.decompress(data)
+                        #import paq
+                        #data= paq.decompress(data)
                     
 
                         
