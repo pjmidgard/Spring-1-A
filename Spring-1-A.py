@@ -515,26 +515,6 @@ class compression:
 
                                     size_data3=size_data2
 
-                                    Limit=0
-                                    File_size_divide=0
-                                    File_size_dividel=1
-
-                                    
-
-                                    
-
-                                    
-                                    if size_data3[0:8]=="11111111":
-                                        size_data3=size_data3[8:]
-                                    elif size_data3[0:8]=="11111110":
-                                        size_data3=size_data3[8:]
-                                        long5=len(size_data3)
-                                        File_size_divide=1
-                                        File_size_dividel=1
-                                        size_data14=size_data3[long5-8:]
-                                        size_data3=size_data3[:long5-8]
-
-                                  
                                     if size_data3[0:9]=="000000001":
                                         size_data3=size_data3[9:]
                                     elif size_data3[0:8]=="00000001":
