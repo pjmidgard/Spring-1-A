@@ -571,7 +571,7 @@ class compression:
                                                 
                                                 N=int(N)
                                                 N=format(N,'08b')#00
-                                                print(Number)
+                                                #print(Number)
                                             else:
                                                 ILIN=size_data3[block:block+8]
                                             
