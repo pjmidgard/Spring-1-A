@@ -4,22 +4,35 @@ import os
 import binascii
 self="'"
 
-namez = input("for compress c or extract e? ")
+namez = input("for password for incrypt file p1 or p2 insert password from file ")
 #@Author Jurijus pacalovas
-class compression:
+class password_class:
 
-    def cryptograpy_compression(self):
+    def password1(self):
 
-                
+                def strToBinary(s):
+                    bin_conv = []
+                 
+                    for c in s:
+                         
+                        # convert each char to
+                        # ASCII value
+                        ascii_val = ord(c)
+                         
+                        # Convert ASCII value to binary
+                        binary_val = bin(ascii_val)
+                        bin_conv.append(binary_val[2:])
+                     
+                        return (' '.join(bin_conv))       
                 
                 self.name = "Author: Jurijus Pacalovas"
 
                 print(self.name)
 
-                if namez!="c" and namez!="e":
+                if namez!="p1" and namez!="p2":
                     print("Your enter incorrect letter")
                 
-                if namez=="c":
+                if namez=="p1":
 
 
                     
@@ -179,172 +192,103 @@ class compression:
                                     
                                 
                                 size_data3=size_data2
-                               
-                                long_file=len(size_data3)
-                              
-                                size_data10=size_data3
-                               
-                                times_of_times=0
 
-                                cvf1=1
-  
-                                if cvf1==1:
-                                    times_compression=0  
-                                  
-                                    long2=len(size_data3)
+                                import getpass
                                 
-                                    size_data10=size_data3
-                                    
-                                    
-                                    long2=len(size_data3)
-                                    
-                                    #Logit 
-                                    blocks=8#9 numbers 29 bits
-                                    Number_Save=""            
-                                    block=0  
-                                    long=len(size_data3)
-                                    times_count=0
-
-                                    while times_count!=1:
-                                        long=len(size_data3)
-                                        #print(long)
+                                password=getpass.getpass()
                                 
-                                        while block<long:
-                                            ILIN=size_data3[block:block+blocks]
-                                            
-                                            Number=int(ILIN,2)
 
-                                            Str_Ilin_Number_Save=str(Number) 
-                                            long5=len(Str_Ilin_Number_Save)
-                                            str1=str(long5)
-                                        
-                                            c=0
-                                            if Number>99:
-                                                str1=""
-                                                Str_Ilin_Number_Save=ILIN
-                                                N=Str_Ilin_Number_Save
-                                                #print(N)#1 0 or 1 1
-                                            elif Number<100 and Number>29:
-                                                str1=""
-                                                N=str1+Str_Ilin_Number_Save
-                                                N=int(N)
-                                                N=format(N,'08b')#0
-                                                
-             
-                                                if N[0:4]=="0000":
-                                                      print("File can't compress")
-                                                      N=str1+Str_Ilin_Number_Save
-                                                      N=int(N)
-                                                      N1=format(N,'07b')#0
-                                                      
-                                                      if N1[0:3]=="000":
-                                                            print("File can't compress")
-                                                            raise SystemExit
-                                                   
-                                                    
-                                                    #print(N)
-                                                else:
-                                                    N=str1+Str_Ilin_Number_Save
-                                                    N=int(N)
-                                                    N=format(N,'08b')#0
-                                                    if N[0:2]=="00":
-                                                        N=str1+Str_Ilin_Number_Save
-                                                        N=int(N)
-                                                        N=format(N,'08b')#0
+                                string = password
 
-                                                        
-                                                        
-                                                #print(len(N))
-                                                #print(N)#000
-                                            elif Number<30:
-                                                str1="0"
-                                                N=Str_Ilin_Number_Save
-                                                N=int(N)
-                                                N=format(N,'08b')#00
-                                                if N[0:4]=="0000":
-                                                    str1="0"
-                                                    N=Str_Ilin_Number_Save
-                                                    N=int(N)
-                                                    N=format(N,'07b')#00
+                                lower="abcdefghijklmopqrstuvwxyz"
 
-                      #if N[0:4]=="0000":
-                                                        #print(N)
-                                                
-                                            
-                                            
-                                            #print(N)
-                                            Number_Save=Number_Save+N
-                                            
-                                            block=block+blocks
-                                        size_data12=Number_Save
-                                        size_data11=size_data12
-                                        size_data3=size_data12
-                                        times_count=times_count+1
-                                        #print(times_count)
-                                    #print(size_data12)
-                                    
-                                    b=bin(long2)[2:]
-                                    #print(b)
-                                    long8=len(b)
-                                    #print(long8)
-                                    b1=format(long8,'08b')
-                                    b2=format(times_count,'040b')
-                                    #print(len(size_data11))
-                                    
-                                    
-                                    size_data11="1"+size_data11
-                            
-                                    lenf=len(size_data11)
-                                        
-                                    add_bits118=""
-                                    count_bits=8-lenf%8
-                                    z=0
-                                    
-                                    if count_bits!=8:
-                                                while z<count_bits:
-                                                    add_bits118="0"+add_bits118
-                                                    z=z+1
-                                                                    
-                                                                    
-                                    size_data11=add_bits118+size_data11
+                                upper="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+                                res=""
+
+                                for i in range(0,len(string)):
+
+                                    if(i%2==0):
+
+                                        if(string[i] in lower):
+
+                                            res+="1"*(lower.index(string[i])+1)
+
+                                        else:
+
+                                            res+="1"*(upper.index(string[i])+1)
+
+                                    else:
+
+                                        if(string[i] in lower):
+
+                                            res+="0"*(lower.index(string[i])+1)
+
+                                        else:
+
+                                            res+="0"*(upper.index(string[i])+1)
+
+                                password=res  
+                                N=int(password,2)
+                                N=format(N,'0240b')
+
+                                password=N    
+
+                                
+                                
+                                
                                     
                                     
-                                    size_data11=size_data11
+                                size_data11=password+size_data3
              
                                                                                 
-                                    n = int(size_data11, 2)
+                                n = int(size_data11, 2)
                                 
-                                    qqwslenf=len(size_data11)
-                                    qqwslenf=(qqwslenf/8)*2
-                                    qqwslenf=str(qqwslenf)
-                                    qqwslenf="%0"+qqwslenf+"x"
+                                qqwslenf=len(size_data11)
+                                qqwslenf=(qqwslenf/8)*2
+                                qqwslenf=str(qqwslenf)
+                                qqwslenf="%0"+qqwslenf+"x"
                              
-                                    jl=binascii.unhexlify(qqwslenf % n)
+                                jl=binascii.unhexlify(qqwslenf % n)
                                 
-                                    #import paq
-                                    #jl= paq.compress(jl)
+                                
                                     
-                                    size_after=len(jl)
+                                size_after=len(jl)
 
-                                    size_after=len(jl)
-                                    #print(size_after)
+                                size_after=len(jl)
+                                
                                    
-                                    qqqwz=qqqwz+1
-                                    szxzzza=""
-                                    szxzs=""
+                                qqqwz=qqqwz+1
+                                szxzzza=""
+                                szxzs=""
                             
-                                    assxw=assxw+1
-                                    if assxw==1:
-                                        assx=10
-                                        if assx==10:
+                                assxw=assxw+1
+                                if assxw==1:
+                                    assx=10
+                                    if assx==10:
 
-                                            f2.write(jl)
-                                            x2 = time()
-                                            x3=x2-x
-                                            return print(x3)
+                                        f2.write(jl)
+                                        x2 = time()
+                                        x3=x2-x
+                                        return print(x3)
 
-    def cryptograpy_unpack(self):                      
-                 if namez=="e":
+    def password2(self):
+
+                 def strToBinary(s):
+                        bin_conv = []
+                     
+                        for c in s:
+                             
+                            # convert each char to
+                            # ASCII value
+                            ascii_val = ord(c)
+                             
+                            # Convert ASCII value to binary
+                            binary_val = bin(ascii_val)
+                            bin_conv.append(binary_val[2:])
+                             
+                            return (' '.join(bin_conv))
+                 if namez=="p2":
                     
                     name = input("What is name of file? ")
                     if os.path.exists(name):
@@ -421,19 +365,11 @@ class compression:
 
                        # Read the whole file at once
                         
-                        data3 = binary_file.read()
+                        data = binary_file.read()
 
-                        data=data3
+                        
 
                     
-                        #import paq
-                        #data= paq.decompress(data)
-                    
-
-                        
-                        
-                        
-
                         if len(data)==0:
                             x4=0.0
                             print(x4)
@@ -514,92 +450,54 @@ class compression:
                                     
 
                                     size_data3=size_data2
-
-                                    if size_data3[0:9]=="000000001":
-                                        size_data3=size_data3[9:]
-                                    elif size_data3[0:8]=="00000001":
-                                        size_data3=size_data3[8:]
-                                    elif size_data3[0:7]=="0000001":
-                                        size_data3=size_data3[7:]
-                                    elif size_data3[0:6]=="000001":
-                                        size_data3=size_data3[6:]
-                                    elif size_data3[0:5]=="00001":
-                                        size_data3=size_data3[5:]
-                                    elif size_data3[0:4]=="0001":
-                                        size_data3=size_data3[4:]
-                                    elif size_data3[0:3]=="001":
-                                        size_data3=size_data3[3:]
-                                    elif size_data3[0:2]=="01":
-                                        size_data3=size_data3[2:]
-                                    elif size_data3[0:1]=="1":
-                                        size_data3=size_data3[1:]
-
-
                                     
-                                    size_data10=size_data3
-                                    
-                                    
-                                    long2=len(size_data3)
-                                    
-                                    #Logit 
-                                    blocks=7#9 numbers 29 bits
-                                    Number_Save=""            
-                                    block=0  
-                                    long=len(size_data3)
-                                    times_count=0
+                                    import getpass
 
-                                    while times_count!=1:
-                                        long=len(size_data3)
-                                        #print(long)
-                                
-                                        while block<long:
-                                            ILIN=size_data3[block:block+blocks]
-                                            
-                                            Number=int(ILIN,2)
+                                    password=getpass.getpass()
+                                    
+                                    password1=size_data3[:240]
+                                    
+                                    string = password
 
-                                            Str_Ilin_Number_Save=str(Number) 
-                                            long5=len(Str_Ilin_Number_Save)
-                                            str1=str(long5)
-                                        
-                                            
-                                            N=Str_Ilin_Number_Save
+                                    lower="abcdefghijklmopqrstuvwxyz"
 
-                                            N=int(N)
-                                            N=format(N,'07b')#00
-                                            if N[0:3]=="000" and Number<30:
-                                                N=Str_Ilin_Number_Save
-                                                
-                                                N=int(N)
-                                                N=format(N,'08b')#00
-                                                #print(Number)
+                                    upper="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+                                    res=""
+
+                                    for i in range(0,len(string)):
+
+                                        if(i%2==0):
+
+                                            if(string[i] in lower):
+
+                                                res+="1"*(lower.index(string[i])+1)
+
                                             else:
-                                                ILIN=size_data3[block:block+8]
-                                            
-                                                Number=int(ILIN,2)
 
-                                                Str_Ilin_Number_Save=str(Number) 
-                                                long5=len(Str_Ilin_Number_Save)
-                                                str1=str(long5)
-                                            
-                                            
-                                                N=Str_Ilin_Number_Save
-                                                N=int(N)
-                                                N=format(N,'08b')#00
-                                                      
-                                            #if N[0:4]=="0000":
-                                                        #print(N)
-                                                
-                                            
-                                            
-                                            #print(N)
-                                            Number_Save=Number_Save+N
-                                            
-                                            block=block+blocks
-                                        size_data12=Number_Save
-                                        size_data11=size_data12
-                                        times_count=times_count+1                                    
-                                    size_data3=size_data11
-                                    #print(len(size_data3))	
+                                                res+="1"*(upper.index(string[i])+1)
+
+                                        else:
+
+                                            if(string[i] in lower):
+
+                                               res+="0"*(lower.index(string[i])+1)
+
+                                            else:
+
+                                               res+="0"*(upper.index(string[i])+1)
+
+                                    password=res   
+                                    
+                                    
+                                
+                                    N=int(password,2)
+                                    N=format(N,'0240b')
+
+                                    password=N    
+                                    
+                                    if  password==password1:
+                                        size_data3=size_data3[240:]
                                         
                                       
                                     n = int(size_data3, 2)
@@ -611,12 +509,7 @@ class compression:
                                     qqwslenf="%0"+qqwslenf+"x"
                              
                                     jl=binascii.unhexlify(qqwslenf % n)
-                                    
-                                    
-                                    
-                                    data2=jl
-
-                               
+                                  
                                     sssssw=len(jl) 
                                   
                                    
@@ -637,10 +530,10 @@ class compression:
                                             return print(x3)  
                   
 self=""                                
-d=compression()
+d=password_class()
     
-xw=d.cryptograpy_compression()
+xw=d.password1()
 print(xw)
 
-xw1=d.cryptograpy_unpack()
+xw1=d.password2()
 print(xw1)
